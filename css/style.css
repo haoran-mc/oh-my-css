@@ -1,0 +1,25 @@
+/* 引入font字体图标 */
+@import url('./all.css');
+
+* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', 'sans-serif';
+}
+
+*::before,
+*::after {
+		margin: 0;
+		padding: 0;
+}
+
+:root {
+		--pink: #ff74a4;
+		--violet: #9f6ea3;
+		--lightblack: #515c6f;
+		--white: #fff;
+		--darkwhite: #cecaca;
+		--pinkshadow: #ffcbdd;
+		--lightbshadow: rgba(0, 0, 0, 0.15);
+}

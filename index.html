@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <!-- 告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <!-- 兼容移动端 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/style.css">
     <title>Music Player | Haoran</title>
 </head>
 <body>
+<!-- 播放器盒子 -->
+<div class="wrapper">
+    <!-- 顶部 -->
+    <div class="top-bar">
+        <i class="fas fa-angle-down"></i>
+        <span>Now Playing</span>
+        <i class="fas fa-ellipsis-h"></i>
+    </div>
+
+    <!-- 图片 -->
+    <div class="img-area">
+        <img src="./image/music1.jpg" alt=""/>
+    </div>
+
+    <!-- 歌曲详情 -->
+    <div class="song-details">
+        <p class="name">Beauz & Jvna -Crazy</p>
+        <p class="artist">Beauz & jvna</p>
+    </div>
+
+    <!-- 进度条 -->
+    <div class="progress-area">
+        <div class="progress-bar"></div>
+        <div class="timer">
+            <span class="current">0:20</span>
+            <span class="duration">3:40</span>
+        </div>
+        <audio id="main-audio" src=""></audio>
+    </div>
+
+    <!-- 管理按钮 -->
+    <div class="controls">
+        <i id="repeat-plist" title="顺序播放" class="fas fa-redo-alt"></i>
+        <i id="prev" class="fas fa-backward"></i>
+        <div class="play-pause">
+            <i class="fas fa-play"></i>
+        </div>
+        <i id="next" class="fas fa-forward"></i>
+        <i id="more-music" class="fas fa-list"></i>
+    </div>
+
+    <!-- 歌曲清单 -->
+    <div class="music-list">
+        <div class="header">
+            <div class="row">
+                <i class="fas fa-list"></i>
+                <span>Music list</span>
+            </div>
+            <i id="close" class="fas fa-times"></i>
+        </div>
+        <ul></ul>
+    </div>
+</div>
 </body>
 </html>

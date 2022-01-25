@@ -1,9 +1,9 @@
 body {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	box-sizing: border-box;   /*指定盒子宽高时，包含外边距*/
 	background: #ebf5fc;
-	overflow: hidden;
+	overflow: hidden;   /*超出元素宽高的部分被隐藏*/
 }
 
 .toggle {

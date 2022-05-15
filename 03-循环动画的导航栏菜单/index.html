@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>循环动画的导航栏菜单</title>
+		<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0-beta3/css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+		<div id="toggle" class="toggle" onclick="menu-expand()">
+			<i class="fas fa-plus" id="plus"></i>
+		</div>
+		<div id="menu" class="menu">
+			<a href="">
+				<i class="fas fa-camera"></i>
+			</a>
+
+			<a href="">
+				<i class="fas fa-video"></i>
+			</a>
+
+			<a href="">
+				<i class="fas fa-phone-volume"></i>
+			</a>
+
+			<a href="">
+				<i class="fas fa-volume-up"></i>
+			</a>
+
+			<a href="">
+				<i class="fas fa-clock"></i>
+			</a>
+
+			<a href="">
+				<i class="fas fa-address-book"></i>
+			</a>
+		</div>
+
+		<script>
+			var i = 0;
+			function expand() {
+							if (i === 0) {
+											document.getElementById("menu").style.transform = "scale(4)";
+											document.getElementById("plus").style.transform = "rotate(137deg)";
+											i = 1;
+										}
+							else {
+											document.getElementById("menu").style.transform = "scale(0)";
+											document.getElementById("plus").style.transform = "rotate(0)";
+											i = 0;
+										}
+						}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="content">
+    <div class="org-src-container">
+   <pre class="src src-go"><span style="color: #268bd2; font-weight: bold;">type</span> <span
+           style="color: #df005f; font-weight: bold;">Mutex</span> <span style="color: #268bd2; font-weight: bold;">struct</span> {
+    state <span style="color: #df005f; font-weight: bold;">int32</span>
+    sema  <span style="color: #df005f; font-weight: bold;">uint32</span>
+}
+
+<span style="color: #268bd2; font-weight: bold;">const</span> (
+    <span style="color: #d75fd7;">mutexLocked</span> = 1 &lt;&lt; <span style="color: #d75fd7;">iota</span>   <span
+               style="color: #008787; background-color: #262626;">// </span><span
+               style="color: #008787; background-color: #262626;">mutex is locked</span>
+    <span style="color: #d75fd7;">mutexWoken</span>
+    <span style="color: #d75fd7;">mutexWaiterShift</span> = <span style="color: #d75fd7;">iota</span>
+)
+<span style="color: #008787; background-color: #262626;">// </span><span
+               style="color: #008787; background-color: #262626;">1 2 2</span>
+</pre>
+    </div>
+    <div class="org-src-container">
+    <pre class="src src-go"><span style="color: #268bd2; font-weight: bold;">type</span> <span
+            style="color: #df005f; font-weight: bold;">Count</span> <span style="color: #268bd2; font-weight: bold;">struct</span> {
+    number <span style="color: #df005f; font-weight: bold;">int</span>
+    mu     <span style="color: #df005f; font-weight: bold;">Mutex</span>
+}
+
+<span style="color: #268bd2; font-weight: bold;">var</span> <span style="color: #8787d7;">count</span> <span
+                style="color: #df005f; font-weight: bold;">Count</span>
+
+<span style="color: #268bd2; font-weight: bold;">for</span> <span style="color: #8787d7;">i</span> := 0; i &lt; 10; i++ {
+    <span style="color: #268bd2; font-weight: bold;">go</span> <span
+                style="color: #268bd2; font-weight: bold;">func</span>() {
+        <span style="color: #268bd2; font-weight: bold;">for</span> <span style="color: #8787d7;">j</span> := 0; j &lt; 100000; j++ {
+            count.mu.<span style="color: #d75fd7; font-weight: bold;">Lock</span>()
+            count.number++
+            count.mu.<span style="color: #d75fd7; font-weight: bold;">Unlock</span>()
+        }
+    }()
+}
+</pre>
+    </div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>

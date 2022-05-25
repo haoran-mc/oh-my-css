@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    width: 60%;
+    /* margin: 0 auto; */
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: -16%;
+    width: 16%;
+    height: 100%;
+    background-color: #444;
+    transition: left 500ms ease;
+    z-index: 1;
+}
+
+#nav ul {
+    position: relative;
+    margin: 100px 0;
+}
+
+.label-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 5%;
+    transition: transform 250ms ease;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#input-menu {
+    display: none;
+}
+
+#input-menu:checked~#nav {
+    left: 0px;
+    transition: left 500ms ease;
+}
+
+#input-menu:checked~#content {
+    transform: translateX(250px);
+    transition: transform 500ms ease;
+}
